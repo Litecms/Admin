@@ -1,7 +1,7 @@
 <!-- Automatic element centering -->
 <div class="lockscreen-wrapper">
     <div class="lockscreen-logo">
-        <a href="{!! trans_url('/admin') !!}">{!! trans('app.name.html') !!}</a>
+        <a href="{!! guard_url('/') !!}">{!! trans('app.name.html') !!}</a>
     </div>
     <!-- User name -->
     <div class="lockscreen-name">{!! User::users('name') !!}</div>
@@ -9,7 +9,7 @@
     <div class="lockscreen-item">
         <!-- lockscreen image -->
         <div class="lockscreen-image">
-            <img src="{!! User::users('photo') !!}" alt="User Image">
+            <img src="{!! user()->picture !!}" alt="User Image">
         </div>
         <!-- /.lockscreen-image -->
         <!-- lockscreen credentials (contains the form) -->
@@ -28,7 +28,7 @@
         Enter your password to retrieve your session
     </div>
     <div class="text-center">
-        <a href="{!! trans_url('/admin/login') !!}">Or sign in as a different user</a>
+        <a href="{!! guard_url('login') !!}">Or sign in as a different user</a>
     </div>
 </div>
 <!-- /.center -->
